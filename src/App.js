@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router,Route } from 'react-router-dom';
 import Login from './component/Login';
-import Register from './component/Register';
+import Signup from './component/Signup';
 class App extends Component {
   render() {
     return (
@@ -10,7 +10,7 @@ class App extends Component {
             <React.Fragment>
            
             <Route exact path="/" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route path="/register" component={Signup} />
          </React.Fragment>
          </Router>
       

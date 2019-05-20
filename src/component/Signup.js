@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link';
-
+import register from '../logic/register';
 const styles = theme => ({
     main: {
         width: 'auto',
@@ -73,12 +73,8 @@ class Register extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
-        let data = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : [];;
-        data.push(this.state);
-        if (localStorage) {
-            localStorage.setItem('user', JSON.stringify(data));
-        }
-
+       const users = this.state;
+        register(users);
         this.setState({
             users: {
                 firstName: '',
