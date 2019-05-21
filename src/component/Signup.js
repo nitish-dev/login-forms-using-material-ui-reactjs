@@ -73,7 +73,8 @@ class Register extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
-       const users = this.state;
+       const users = this.state.users;
+      
         register(users);
         this.setState({
             users: {
